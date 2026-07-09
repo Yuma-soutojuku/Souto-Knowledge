@@ -1,4 +1,5 @@
 import os
+from dotenv import load_dotenv
 import sys
 import time
 import argparse  # ← これが必須です！
@@ -10,7 +11,8 @@ from pypdf import PdfReader, PdfWriter
 # 1. 初期設定
 # ==========================================
 # 取得したAPIキーをここに設定してください
-API_KEY = "AQ.Ab8RN6J9fGvXDWfiTCQtROgiUNAg7qErL2MsFeTOfM-2OdPQSA"
+load_dotenv()
+API_KEY = os.getenv("GOOGLE_API_KEY")
 CHUNK_SIZE = 15  
 MAX_RETRIES = 5  
 
